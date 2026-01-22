@@ -1,10 +1,10 @@
 <template>
   <el-container>
     <el-header>
-      <el-container style="text-align: left; font-size: 20px;">
+      <el-container style="text-align: left; font-size: 20px">
         <div
           :style="{
-            width: isCollapse ? '64px' : '200px'
+            width: isCollapse ? '64px' : '200px',
           }"
         >
           <div class="title_lg" v-if="!isCollapse">Funpepper</div>
@@ -41,13 +41,25 @@
     <el-container>
       <el-aside
         :style="{
-          width: isCollapse ? '64px' : '200px'
+          width: isCollapse ? '64px' : '200px',
         }"
       >
         <el-menu :collapse="isCollapse" :collapse-transition="true" router>
           <el-menu-item index="game">
             <i class="el-icon-menu"></i>
             <span slot="title">游戏列表</span>
+          </el-menu-item>
+          <el-menu-item index="test">
+            <i class="el-icon-menu"></i>
+            <span slot="title">test</span>
+          </el-menu-item>
+          <el-menu-item index="historyAQ">
+            <i class="el-icon-menu"></i>
+            <span slot="title">知识问答历史记录</span>
+          </el-menu-item>
+          <el-menu-item index="menuHidden">
+            <i class="el-icon-menu"></i>
+            <span slot="title">弹框菜单显示</span>
           </el-menu-item>
         </el-menu></el-aside
       >
@@ -64,22 +76,22 @@ export default {
     const item = {
       date: "2016-05-02",
       name: "王小虎",
-      address: "上海市普陀区金沙江路 1518 弄"
+      address: "上海市普陀区金沙江路 1518 弄",
     };
     return {
       isCollapse: false,
-      tableData: Array(20).fill(item)
+      tableData: Array(20).fill(item),
     };
   },
   methods: {
     handleCommand(command) {
       if (command === "logout") {
         this.$router.push({
-          name: "login"
+          name: "login",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
